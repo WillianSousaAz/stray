@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Stray - Conheça o Jogo do Ano</title>
+  </head>
+  <body>
+    <section class="loading">
+      <div class="logo-box">
+        <img src="../img/logo-stray.png" alt="Logo Stray" />
+      </div>
+      <div class="cat-box">
+        <img src="../img/cat.gif" alt="Loading Cat" />
+      </div>
+    </section>
+    <section class="content">
+      <div class="content-box primary animacao">
+        <div class="inicio">
+          <img src="../img/logo-stray.png" alt="Logo Stray" />
+          <p>
+            Perdido, sozinho e separado da sua família, um gato de rua precisa
+            desvendar um mistério ancestral para fugir de uma cibercidade
+            esquecida e encontrar o caminho para casa.
+          </p>
+          <audio src="../audio/100006562.mp3"></audio>
+          <button onclick="Second()">Conheça o Jogo</button>
+        </div>
+
+        <!--div class="cat-box-content">
+          <img src="../img/cat.png" alt="" />
+        </div -->
+      </div>
+    </section>
+    <script>
+      setTimeout(function loading() {
+        const box_loading = document.querySelector(".loading");
+        box_loading.classList.toggle("finalizar");
+      }, 5850);
+      function Second() {
+        const box_second = document.querySelector(".content-box");
+        const audio = document.querySelector('audio');
+        box_second.classList.toggle("primary");
+        audio.currentTime = 0.4;
+        audio.play();
+        
+      }
+      setTimeout(function loading() {
+        const box_anim = document.querySelector(".content-box");
+        box_anim.classList.toggle("animacao");
+      }, 6850);
+    </script>
+  </body>
+</html>

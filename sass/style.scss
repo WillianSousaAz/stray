@@ -1,0 +1,213 @@
+//Cherry Colors
+
+$primary-color: #211102;
+$second-color: #3b1307;
+$third-color: #7a0e1e;
+$fourth-color: #9e2141;
+$fifth-color: #fdf1e1;
+
+@import url("https://use.typekit.net/gsi5kvy.css");
+
+body {
+    height: 100vh;
+    width: 100%;
+    background: $primary-color;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+// Loading Inicio
+
+.loading::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotate(180deg);
+    background: transparent url("../img/bg.jpg") no-repeat center top;
+    z-index: -2;
+    pointer-events: none;
+    background-size: 100% auto;
+}
+.loading {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: url("../img/bg.jpg") $primary-color;
+    background-size: auto;
+    position: relative;
+    animation-name: subindo;
+    animation-duration: 2s;
+    animation-delay: 4s;
+    z-index: 999;
+}
+.loading.finalizar {
+    display: none;
+}
+@keyframes subindo {
+    from {
+        top: 0%;
+    }
+    to {
+        top: -100%;
+    }
+}
+.logo-box {
+    $width: 300px;
+    $height: 219px;
+    width: $width;
+    height: $height;
+    margin-bottom: 100px;
+    img {
+        width: $width;
+        height: $height;
+    }
+}
+.cat-box {
+    $width: 250px;
+    $height: 125px;
+    width: $width;
+    height: $height;
+    img {
+        width: $width;
+        height: $height;
+    }
+}
+
+//Final Loading
+
+//Inicio Content
+
+@keyframes subindo-content {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.content {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background: url("../img/bg_content.png");
+    background-position: bottom;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.411);
+}
+.content-box.animacao{
+    opacity: 0;
+    animation-name: subindo-content;
+    animation-duration: 2s;
+    animation-delay: 5250ms;
+
+}
+.content-box{
+    position: absolute;
+    width: 85%;
+    max-width: 1200px;
+    min-width: 335px;
+    max-height: 785px;
+    height: 90%;
+    z-index: 1;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.13);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    transition: 1s;
+    .inicio{
+        display: none;
+    }
+}
+.content-box.primary {
+    position: absolute;
+    width: 40%;
+    max-width: 500px;
+    min-width: 335px;
+    max-height: 660px;
+    height: 90%;
+    z-index: 1;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.13);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .inicio{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .cat-box-content {
+        $width: 300px;
+        width: $width;
+        img {
+            position: absolute;
+            bottom: -7px;
+            width: 300px;
+            rotate: -7deg;
+        }
+    }
+    img {
+        width: 270px;
+        margin-top: 35px;
+        margin-bottom: 35px;
+    }
+    p {
+        width: 90%;
+        font-size: 19px;
+        color: #fff5ef;
+        font-family: ibm-plex-mono, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+    button{
+        width: 210px;
+        font-size: 17px;
+        border-radius: 20px;
+        height: 45px;
+        background: #00000080;
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        color: #fff;
+        cursor: pointer;
+        font-family: ibm-plex-mono, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        border-style: none;
+        position: absolute;
+        bottom: 60px;
+    }
+}
